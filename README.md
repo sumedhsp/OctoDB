@@ -46,6 +46,10 @@ OctoDB uses a hybrid architecture combining shared and isolated resources:
 - **Caching**: Redis for retry mechanisms and query performance.
 - **Storage**: DynamoDB for log and metadata management.
 
+Below is an architecture diagram of the system:
+![image](https://github.com/user-attachments/assets/2a55ebdb-09b0-48a1-8b27-33f9a0f708fa)
+
+
 ## Future Work
 - **Selective Schema Updates**: Allow tenants to opt into updates from the parent schema.
 - **Performance Optimization**: Adaptive caching, tenant-specific indexing, and smarter query handling.
