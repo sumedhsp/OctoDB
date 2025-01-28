@@ -1,0 +1,30 @@
+# migrate difault table -> custom table
+[
+    {
+        "channels": "CREATE TABLE channels (id VARCHAR(100) PRIMARY KEY, team_id VARCHAR(100) REFERENCES teams(id) ON DELETE CASCADE, my_channel_name VARCHAR(255) NOT NULL, description TEXT, is_private BOOLEAN DEFAULT FALSE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"
+    }
+]
+
+
+
+## customtable
+[
+    {
+        "custom_channels": "CREATE TABLE custom_channels (id VARCHAR(100) PRIMARY KEY, team_id VARCHAR(100) REFERENCES teams(id) ON DELETE CASCADE, name VARCHAR(255) NOT NULL, description TEXT, is_private BOOLEAN DEFAULT FALSE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"
+    }
+]
+
+# admin migrates tables
+
+[
+    {
+        "channels": "CREATE TABLE channels (id VARCHAR(100) PRIMARY KEY, team_id VARCHAR(100) REFERENCES teams(id) ON DELETE CASCADE, channel_name VARCHAR(255) NOT NULL, description TEXT, is_private BOOLEAN DEFAULT FALSE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"
+    }
+]
+
+
+[
+    {
+        "messages": "CREATE TABLE messages (id VARCHAR(200) PRIMARY KEY, channel_id VARCHAR(100) REFERENCES channels(id) ON DELETE CASCADE, user_id VARCHAR(50) REFERENCES users(id) ON DELETE SET NULL, content TEXT NOT NULL, is_edited BOOLEAN DEFAULT FALSE, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"
+    }
+]

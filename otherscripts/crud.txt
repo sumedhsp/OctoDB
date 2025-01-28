@@ -1,0 +1,16 @@
+INSERT INTO users (id, name, email, password_hash, profile_picture_url) VALUES ('user123', 'John Doe', 'john.doe@example.com', 'hashedpassword123', 'http://example.com/johndoe.jpg')
+
+-- Retrieve all users
+SELECT * FROM users
+
+-- Retrieve a single user by ID
+SELECT * FROM users WHERE id = 'user123'
+
+-- Retrieve a single user by email
+SELECT * FROM users WHERE email = 'john.doe@example.com'
+
+
+UPDATE users SET name = 'Jane Doe', email = 'jane.doe@example.com', password_hash = 'newhashedpassword456', profile_picture_url = 'http://example.com/janedoe.jpg' WHERE id = 'user123'
+
+
+DELETE FROM users WHERE id = 'user123';
