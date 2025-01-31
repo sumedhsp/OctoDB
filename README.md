@@ -1,4 +1,4 @@
-# OctoDB: Scalable Multi-Tenant DBaaS with Automated Migrations
+# OctoDB: Scalable Multi-Tenant DBaaS with Hierarchical Schema Migrations and Adaptive Synchronization
 
 ## Overview
 **OctoDB** is a multi-tenant Database-as-a-Service (DBaaS) solution designed for modern cloud-based applications. It addresses challenges like dynamic tenant onboarding, schema migrations, and database security by combining scalability, flexibility, and automation.
